@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%if (admin){%>
+    <script>
+        var glob = {
+            admin: true
+        }
+    </script>
+    <% } %>
+    <script src="/js/script.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div id='calendar'></div>
+
+  </body>
+</html>
