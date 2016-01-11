@@ -55,9 +55,6 @@
 	var http = __webpack_require__(113)($)
 	var noty = __webpack_require__(114)($)
 
-
-
-
 	$(function() {
 	    if(!'placeholder' in document.createElement('input')){
 	        document.write('<h1 style="text-align:center;padding:50px;">会议室预定请使用chrome，firefox，ie8+或者各种国内极速版！</h1>');
@@ -81,6 +78,7 @@
 	            text: '添加会议室',
 	            click: function() {
 	                noty({
+	                    modal:true,
 	                    text: '<div>'
 	                            +'<h3>添加会议室</h3>'
 	                            +'<div class="form-group"><input class="noty-event form-control input-sm" placeholder="请输入会议室名称"/></div>'
@@ -157,6 +155,7 @@
 	        resourceRender = function(resource, cellEls){
 	            cellEls.on('click', function() {
 	                noty({
+	                    modal:true,
 	                    text: '<div>'
 	                            +'<h3>删除会议室</h3>'
 	                            // +'<div class="form-group"><input class="noty-event form-control input-sm" placeholder="请输入会议室主题"/></div>'
@@ -224,13 +223,6 @@
 	                        }
 	                    }]
 	                })
-
-	                // http.delete('rooms',{room_id:resource.room_id}).then(function(d){
-	                //     $('#calendar').fullCalendar('removeResource', resource);
-	                // })
-	                // if (confirm('Are you sure you want to delete ' + resource.title + '?')) {
-	                //     $('#calendar').fullCalendar('removeResource', resource);
-	                // }
 	            });
 	        }
 	    }
@@ -240,7 +232,6 @@
 	        now: '',
 	        lang:'zh-CN',
 	        columnFormat:'ddd',
-	        // timeFormat: 'h(:mm)t',
 	        buttonText:{
 	            today:    '返回当前',
 	            month:    '本月',
@@ -268,6 +259,7 @@
 	            var eventData;
 	            var that = this;
 	            var $ny = noty({
+	                modal:true,
 	                text: '<div>'
 	                        +'<h3>信息填写</h3>'
 	                        +'<div class="form-group"><input class="noty-user form-control input-sm" placeholder="请输入预订人"/></div>'
@@ -374,6 +366,7 @@
 	        },
 	        eventClick: function(event, element) {
 	            noty({
+	                modal:true,
 	                text: '<div>'
 	                        +'<h3>信息修改</h3>'
 	                        +'<div class="form-group"><input class="noty-user form-control input-sm" placeholder="请修改预订人（选填）"/></div>'
@@ -476,7 +469,6 @@
 	                                }, 3000)
 	                                return;
 	                            }
-	                            $('#calendar').fullCalendar('removeEvents', event.event_id)
 	                            $('#calendar').fullCalendar('removeEvents', event._id)
 	                            $noty.close();
 	                            var $m = noty({
