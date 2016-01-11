@@ -8,8 +8,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, "public/js"),
         publicPath: "htt://www.baidu.com",
-        filename: "[name].js"
-            // chunkFilename: "[chunkhash].js"
+        filename: "[name].js",
+        chunkFilename: "[chunkhash].js"
     },
     watch: true,
     module: {
