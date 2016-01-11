@@ -1,6 +1,6 @@
 ### 环境
 
-  nodejs 和 mongodb
+nodejs 和 mongodb
 
 ### 使用
 
