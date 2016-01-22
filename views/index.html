@@ -9,11 +9,14 @@
         }
     </script>
     <% } %>
-    <script src="/js/script.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <div id='calendar'></div>
-
+      <%if (isIE){%>
+        <h1 style="text-align:center;padding:50px;">会议室预定请使用chrome，firefox，ie8+或者各种国内极速版！</h1>
+      <%}else{%>
+        <script src="/js/script.js"></script>
+        <h1><%= title %></h1>
+        <div id='calendar'></div>
+      <% } %>
   </body>
 </html>

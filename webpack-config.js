@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "public/js"),
-        publicPath: "htt://www.baidu.com",
+        // publicPath: "htt://www.baidu.com",
         filename: "[name].js",
         chunkFilename: "[chunkhash].js"
     },
@@ -17,5 +17,12 @@ module.exports = {
             test: /\.css$/,
             loader: "style-loader!css-loader"
         }]
-    }
+    },
+    plugins:[
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
+    ]
 };

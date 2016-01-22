@@ -145,7 +145,7 @@ $(function() {
                                 id:resource.id,
                                 belongs: belongs
                             };
-                            http.delete('rooms',roomData).then(function(data){
+                            http['delete']('rooms',roomData).then(function(data){
                                 if(data.errno == 0){
                                     var $n = noty({
                                         text: '会议室管理密码不正确',
@@ -412,7 +412,7 @@ $(function() {
                             }, 3000)
                             return
                         }
-                        http.delete('events', {
+                        http['delete']('events', {
                             id: event._id,
                             belongs: belongs
                         }).then(function(data){

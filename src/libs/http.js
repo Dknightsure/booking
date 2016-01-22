@@ -1,10 +1,10 @@
 function http($){
 
     var methods = {
-        get: null,
-        post: null,
-        delete: null,
-        put: null
+        "get": null,
+        "post": null,
+        "delete": null,
+        "put": null
     }
 
     $.each(methods,function(method,val) {

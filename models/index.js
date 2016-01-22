@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var event = require('./event');
 var room = require('./room');
 
-mongoose.connect('mongodb://127.0.0.1/test');
+mongoose.connect('mongodb://127.0.0.1/booking');
 var db = mongoose.connection;
 
 db.on('open',function(err){

@@ -7,7 +7,15 @@ var _ = require('lodash');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var query = req.query
-    res.render('index',{title:'会议室预定',admin: (typeof query.admin == 'string')})
+    var ua = req.headers['user-agent']
+    var isIE = (function(){
+        try{
+            return ua.match(/MSIE ([\d.]+)/)[1] && ua.match(/MSIE ([\d.]+)/)[1] < 9
+        }catch(e){
+            return false
+        }
+    })();
+    res.render('index',{title:'会议室预定',admin: (typeof query.admin == 'string'),isIE: isIE})
 });
 
 router.all('/rooms', function(req, res, next) {
